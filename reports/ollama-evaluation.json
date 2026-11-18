@@ -1,0 +1,1447 @@
+{
+  "created_at": "2026-11-18T05:43:16.926749+00:00",
+  "provider": "ollama",
+  "embedding_model": "nomic-embed-text",
+  "chat_model": "qwen2.5:3b",
+  "index_id": "6750d61b3d963c40",
+  "python": "3.12.16",
+  "top_k": 5,
+  "generation_enabled": true,
+  "dataset_size": 24,
+  "documents": 6,
+  "chunk_words": 220,
+  "chunk_overlap": 40,
+  "min_similarity": 0.35,
+  "note": "Synthetic development fixture, not a held-out benchmark. Demo vectors are lexical hashes. Citation validity does not measure factual accuracy.",
+  "strategies": {
+    "bm25": {
+      "metrics": {
+        "evidence_recall_at_5": 1.0,
+        "mrr_at_5": 0.96875,
+        "retrieval_abstention_specificity": 0.375,
+        "retrieval_answerable_coverage": 1.0,
+        "latency_p50_ms": 1884.5095000000001,
+        "latency_p95_ms": 9714.26714999999,
+        "answer_abstention_specificity": 1.0,
+        "answerable_coverage": 0.8125,
+        "citation_validity_among_answers": 1.0
+      },
+      "cases": [
+        {
+          "id": "q01",
+          "question": "What is the procedure for a production rollback?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 5874.529,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "incident-response.md",
+            "data-protection.md",
+            "api-platform.md"
+          ],
+          "answer": "The procedure for a production rollback involves pausing the deployment pipeline, selecting the previous healthy image digest, and redeploying that image. [S1]\n\nAfter redeploying the previous healthy image, the health endpoint and error dashboard must be verified for ten minutes. [S1]\n\nIn case of a rollback, the on-call engineer must be notified and the failed release's logs attached to the incident ticket. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q02",
+          "question": "How much traffic goes to the deployment canary and for how long?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 1915.571,
+          "filenames": [
+            "deployment.md"
+          ],
+          "answer": "The deployment canary receives 5 percent of traffic for ten minutes. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q03",
+          "question": "When can routine production deployments happen?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3252.259,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "deployment.md",
+            "data-protection.md",
+            "incident-response.md"
+          ],
+          "answer": "Routine production deployments happen on weekdays between 09:00 and 16:00 UTC. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q04",
+          "question": "What is the on-call escalation process?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 10510.936,
+          "filenames": [
+            "observability.md",
+            "incident-response.md",
+            "deployment.md",
+            "deployment.md",
+            "observability.md"
+          ],
+          "answer": "Page the on-call engineer when the error rate exceeds five percent for five consecutive minutes. [S1] [S5]\n\nThe primary on-call engineer must acknowledge a production page within five minutes. [S2]\n\nIf the primary on-call engineer does not acknowledge within five minutes, page the secondary on-call engineer. [S2]\n\nIf no engineer acknowledges within ten minutes of the first page, escalate to the engineering manager. [S2]\n\nThe first responding engineer acts as incident commander until ownership is explicitly handed over. [S2]\n\nPublish a status update every fifteen minutes until recovery. [S2]\n\nNever include customer records, access tokens, or private debugging output in status updates. [S2]\n\nThe incident scribe maintains a timeline of decisions in the incident ticket. [S2]\n\nAn incident is resolved after the customer-facing service has been healthy for thirty consecutive minutes. [S2]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q05",
+          "question": "How frequently should SEV1 status updates be published?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 1967.482,
+          "filenames": [
+            "incident-response.md"
+          ],
+          "answer": "For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q06",
+          "question": "When is an incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2138.839,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "deployment.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1] [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q07",
+          "question": "How long are backups retained?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 1853.448,
+          "filenames": [
+            "data-protection.md"
+          ],
+          "answer": "Backups are retained for thirty days. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q08",
+          "question": "What are the recovery point and recovery time objectives?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 1320.996,
+          "filenames": [
+            "data-protection.md",
+            "observability.md",
+            "incident-response.md",
+            "incident-response.md",
+            "deployment.md"
+          ],
+          "answer": "The recovery point objective is six hours and the recovery time objective is two hours. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q09",
+          "question": "What is the deadline for removing active records after a customer deletion request?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 1330.754,
+          "filenames": [
+            "data-protection.md",
+            "incident-response.md",
+            "observability.md",
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "After a verified customer deletion request, active customer records must be removed within seven days. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q10",
+          "question": "What is the standard API quota and what happens when it is exceeded?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 1751.949,
+          "filenames": [
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q11",
+          "question": "How long does the API store idempotency keys?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2039.891,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q12",
+          "question": "How frequently must API tokens be rotated?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 469.1,
+          "filenames": [
+            "api-platform.md",
+            "incident-response.md",
+            "api-platform.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q13",
+          "question": "What Python and Node.js versions are used for local development?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2079.673,
+          "filenames": [
+            "developer-onboarding.md"
+          ],
+          "answer": "Python 3.12 and Node.js 22 are used for local development [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q14",
+          "question": "What does the onboarding buddy do during the first month?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2951.891,
+          "filenames": [
+            "developer-onboarding.md",
+            "developer-onboarding.md",
+            "deployment.md"
+          ],
+          "answer": "The onboarding buddy schedules two check-ins per week during the first month. [S1] [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q15",
+          "question": "What availability objective and error alert threshold are defined?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3115.216,
+          "filenames": [
+            "observability.md",
+            "observability.md"
+          ],
+          "answer": "The customer API has a monthly availability objective of 99.9 percent. [S1]\n\nThe error alert threshold is set to exceed five percent for five consecutive minutes. [S1] [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q16",
+          "question": "What should happen after a deployment failure, and when is the incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 10391.868,
+          "filenames": [
+            "incident-response.md",
+            "deployment.md",
+            "incident-response.md",
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "Deployment-related incidents should link the release ticket and the exact image digest used for recovery. [S1]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]\n\nAn incident is resolved after the customer-facing service has been healthy for thirty consecutive minutes. [S3]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q17",
+          "question": "What is the capital of Argentina?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 8.889,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q18",
+          "question": "Who won the Wimbledon tennis championship?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 6.509,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q19",
+          "question": "Explain the chemical formula of chlorophyll.",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 1110.138,
+          "filenames": [
+            "developer-onboarding.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q20",
+          "question": "Which planets have rings?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 8.979,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q21",
+          "question": "What is the exact production database password?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 456.511,
+          "filenames": [
+            "developer-onboarding.md",
+            "incident-response.md",
+            "data-protection.md",
+            "data-protection.md",
+            "deployment.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q22",
+          "question": "What is the name and personal phone number of the engineering manager?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2455.431,
+          "filenames": [
+            "developer-onboarding.md",
+            "incident-response.md",
+            "api-platform.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q23",
+          "question": "What was the actual customer API availability last month?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 1755.383,
+          "filenames": [
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q24",
+          "question": "What is the monetary price of the standard API plan?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 1735.856,
+          "filenames": [
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        }
+      ]
+    },
+    "dense": {
+      "metrics": {
+        "evidence_recall_at_5": 1.0,
+        "mrr_at_5": 0.8541666666666666,
+        "retrieval_abstention_specificity": 0.0,
+        "retrieval_answerable_coverage": 1.0,
+        "latency_p50_ms": 2999.6925,
+        "latency_p95_ms": 10664.68745,
+        "answer_abstention_specificity": 1.0,
+        "answerable_coverage": 0.875,
+        "citation_validity_among_answers": 1.0
+      },
+      "cases": [
+        {
+          "id": "q01",
+          "question": "What is the procedure for a production rollback?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 5367.936,
+          "filenames": [
+            "deployment.md",
+            "deployment.md",
+            "data-protection.md",
+            "incident-response.md",
+            "data-protection.md"
+          ],
+          "answer": "To roll back production, pause the deployment pipeline, select the previous healthy image digest, and redeploy that image. [S1]\n\nVerify the health endpoint and error dashboard for ten minutes after the rollback. [S1]\n\nNotify the on-call engineer and attach the failed release's logs to the incident ticket. [S1]\n\nNever reverse a destructive database migration automatically; follow the migration recovery plan approved for that change. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q02",
+          "question": "How much traffic goes to the deployment canary and for how long?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2983.983,
+          "filenames": [
+            "deployment.md",
+            "deployment.md",
+            "incident-response.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "The deployment canary receives five percent of traffic for ten minutes. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q03",
+          "question": "When can routine production deployments happen?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2869.097,
+          "filenames": [
+            "deployment.md",
+            "deployment.md",
+            "incident-response.md",
+            "observability.md",
+            "incident-response.md"
+          ],
+          "answer": "Routine production deployments happen on weekdays between 09:00 and 16:00 UTC. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q04",
+          "question": "What is the on-call escalation process?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 10333.122,
+          "filenames": [
+            "observability.md",
+            "incident-response.md",
+            "deployment.md",
+            "incident-response.md",
+            "deployment.md"
+          ],
+          "answer": "Page the on-call engineer when the error rate exceeds five percent for five consecutive minutes. [S1]\n\nThe primary on-call engineer must acknowledge a production page within five minutes. [S2]\n\nIf the primary on-call engineer does not acknowledge within five minutes, page the secondary on-call engineer. [S2]\n\nIf no engineer acknowledges within ten minutes of the first page, escalate to the engineering manager. [S2]\n\nThe first responding engineer acts as incident commander until ownership is explicitly handed over. [S2]\n\nPublish a status update every fifteen minutes until recovery for a SEV1 incident. [S2]\n\nNever reverse a destructive database migration automatically; follow the migration recovery plan approved for that change. [S3]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S4]\n\nTo roll back production, pause the deployment pipeline, select the previous healthy image digest, and redeploy that image. [S3]\n\nNotify the on-call engineer and attach the failed release's logs to the incident ticket. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q05",
+          "question": "How frequently should SEV1 status updates be published?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3071.509,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "developer-onboarding.md",
+            "observability.md",
+            "deployment.md"
+          ],
+          "answer": "For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q06",
+          "question": "When is an incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2282.327,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "deployment.md",
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1] [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q07",
+          "question": "How long are backups retained?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2870.678,
+          "filenames": [
+            "data-protection.md",
+            "data-protection.md",
+            "developer-onboarding.md",
+            "incident-response.md",
+            "deployment.md"
+          ],
+          "answer": "Backups are retained for thirty days. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q08",
+          "question": "What are the recovery point and recovery time objectives?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 10826.557,
+          "filenames": [
+            "incident-response.md",
+            "deployment.md",
+            "data-protection.md",
+            "data-protection.md",
+            "incident-response.md"
+          ],
+          "answer": "The recovery point objective is six hours and the recovery time objective is two hours. [S3]\n\nA SEV1 incident means complete production unavailability or confirmed exposure of customer data. [S1]\n\nA SEV2 incident means a major feature is unavailable for a subset of customers. [S1]\n\nOnly the incident commander can downgrade an active incident after checking the customer impact. [S1]\n\nThe primary on-call engineer must acknowledge a production page within five minutes. [S1]\n\nIf the primary on-call engineer does not acknowledge within five minutes, page the secondary on-call engineer. [S1]\n\nIf no engineer acknowledges within ten minutes of the first page, escalate to the engineering manager. [S1]\n\nThe first responding engineer acts as incident commander until ownership is explicitly handed over. [S1]\n\nFor a SEV1 incident, publish a status update every fifteen minutes until recovery. [S1]\n\nEvery update must state the customer impact, current mitigation, and next update time. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q09",
+          "question": "What is the deadline for removing active records after a customer deletion request?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3059.6,
+          "filenames": [
+            "data-protection.md",
+            "deployment.md",
+            "data-protection.md",
+            "incident-response.md",
+            "api-platform.md"
+          ],
+          "answer": "The deadline for removing active records after a customer deletion request is within seven days. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q10",
+          "question": "What is the standard API quota and what happens when it is exceeded?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3439.056,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "observability.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "The standard API quota is 120 requests per minute per project. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q11",
+          "question": "How long does the API store idempotency keys?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3339.774,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "data-protection.md",
+            "data-protection.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "The API stores idempotency keys for twenty-four hours. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q12",
+          "question": "How frequently must API tokens be rotated?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 1962.96,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "observability.md",
+            "developer-onboarding.md",
+            "observability.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q13",
+          "question": "What Python and Node.js versions are used for local development?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3037.672,
+          "filenames": [
+            "api-platform.md",
+            "developer-onboarding.md",
+            "api-platform.md",
+            "deployment.md",
+            "deployment.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q14",
+          "question": "What does the onboarding buddy do during the first month?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4077.671,
+          "filenames": [
+            "developer-onboarding.md",
+            "developer-onboarding.md",
+            "deployment.md",
+            "deployment.md",
+            "incident-response.md"
+          ],
+          "answer": "The onboarding buddy schedules two check-ins per week during the first month. [S1] [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q15",
+          "question": "What availability objective and error alert threshold are defined?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4493.473,
+          "filenames": [
+            "observability.md",
+            "observability.md",
+            "data-protection.md",
+            "deployment.md",
+            "incident-response.md"
+          ],
+          "answer": "The error alert threshold is defined as the error rate exceeding five percent for five consecutive minutes. [S1] [S2]\n\nThe availability objective for the customer API is 99.9 percent per month. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q16",
+          "question": "What should happen after a deployment failure, and when is the incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 10723.199,
+          "filenames": [
+            "incident-response.md",
+            "deployment.md",
+            "incident-response.md",
+            "deployment.md",
+            "observability.md"
+          ],
+          "answer": "Deployment-related incidents should link the release ticket and the exact image digest used for recovery. [S1]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1]\n\nA SEV1 incident means complete production unavailability or confirmed exposure of customer data. [S3]\n\nThe primary on-call engineer must acknowledge a production page within five minutes. [S3]\n\nThe first responding engineer acts as incident commander until ownership is explicitly handed over. [S3]\n\nA SEV2 incident means a major feature is unavailable for a subset of customers. [S3]\n\nNo routine releases are allowed during the monthly billing run. [S4]\n\nTo roll back production, pause the deployment pipeline, select the previous healthy image digest, and redeploy that image. [S4]\n\nNever reverse a destructive database migration automatically; follow the migration recovery plan approved for that change. [S4]\n\nThe first responding engineer acts as incident commander until ownership is explicitly handed over. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q17",
+          "question": "What is the capital of Argentina?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 2223.067,
+          "filenames": [
+            "api-platform.md",
+            "incident-response.md",
+            "deployment.md",
+            "data-protection.md",
+            "deployment.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q18",
+          "question": "Who won the Wimbledon tennis championship?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 2569.927,
+          "filenames": [
+            "incident-response.md",
+            "api-platform.md",
+            "incident-response.md",
+            "observability.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q19",
+          "question": "Explain the chemical formula of chlorophyll.",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 2514.63,
+          "filenames": [
+            "api-platform.md",
+            "observability.md",
+            "developer-onboarding.md",
+            "deployment.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q20",
+          "question": "Which planets have rings?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 2592.838,
+          "filenames": [
+            "api-platform.md",
+            "deployment.md",
+            "developer-onboarding.md",
+            "api-platform.md",
+            "incident-response.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q21",
+          "question": "What is the exact production database password?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 3015.402,
+          "filenames": [
+            "data-protection.md",
+            "data-protection.md",
+            "api-platform.md",
+            "api-platform.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q22",
+          "question": "What is the name and personal phone number of the engineering manager?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2604.239,
+          "filenames": [
+            "incident-response.md",
+            "developer-onboarding.md",
+            "deployment.md",
+            "developer-onboarding.md",
+            "observability.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q23",
+          "question": "What was the actual customer API availability last month?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2667.723,
+          "filenames": [
+            "observability.md",
+            "api-platform.md",
+            "api-platform.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q24",
+          "question": "What is the monetary price of the standard API plan?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2677.607,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "observability.md",
+            "incident-response.md",
+            "deployment.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        }
+      ]
+    },
+    "hybrid": {
+      "metrics": {
+        "evidence_recall_at_5": 1.0,
+        "mrr_at_5": 0.9375,
+        "retrieval_abstention_specificity": 0.0,
+        "retrieval_answerable_coverage": 1.0,
+        "latency_p50_ms": 3032.0895,
+        "latency_p95_ms": 9674.495099999991,
+        "answer_abstention_specificity": 1.0,
+        "answerable_coverage": 0.8125,
+        "citation_validity_among_answers": 1.0
+      },
+      "cases": [
+        {
+          "id": "q01",
+          "question": "What is the procedure for a production rollback?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 6182.333,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "incident-response.md",
+            "data-protection.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "To roll back production, pause the deployment pipeline, select the previous healthy image digest, and redeploy that image. [S1]\n\nVerify the health endpoint and error dashboard for ten minutes after the rollback. [S1]\n\nNotify the on-call engineer and attach the failed release's logs to the incident ticket. [S1]\n\nNever reverse a destructive database migration automatically; follow the migration recovery plan approved for that change. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q02",
+          "question": "How much traffic goes to the deployment canary and for how long?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3004.941,
+          "filenames": [
+            "deployment.md",
+            "deployment.md",
+            "incident-response.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "The deployment canary receives five percent of traffic for ten minutes. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q03",
+          "question": "When can routine production deployments happen?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3025.248,
+          "filenames": [
+            "deployment.md",
+            "deployment.md",
+            "data-protection.md",
+            "incident-response.md",
+            "data-protection.md"
+          ],
+          "answer": "Routine production deployments happen on weekdays between 09:00 and 16:00 UTC. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q04",
+          "question": "What is the on-call escalation process?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 10290.759,
+          "filenames": [
+            "observability.md",
+            "incident-response.md",
+            "deployment.md",
+            "deployment.md",
+            "observability.md"
+          ],
+          "answer": "Page the on-call engineer when the error rate exceeds five percent for five consecutive minutes. [S1] [S4]\n\nThe primary on-call engineer must acknowledge a production page within five minutes. [S2]\n\nIf the primary on-call engineer does not acknowledge within five minutes, page the secondary on-call engineer. [S2]\n\nIf no engineer acknowledges within ten minutes of the first page, escalate to the engineering manager. [S2]\n\nThe first responding engineer acts as incident commander until ownership is explicitly handed over. [S2]\n\nPublish a status update every fifteen minutes until recovery. [S2]\n\nNever include customer records, access tokens, or private debugging output in status updates. [S2]\n\nThe incident scribe maintains a timeline of decisions in the incident ticket. [S2]\n\nAn incident is resolved after the customer-facing service has been healthy for thirty consecutive minutes. [S2]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q05",
+          "question": "How frequently should SEV1 status updates be published?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4080.97,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "developer-onboarding.md",
+            "developer-onboarding.md",
+            "observability.md"
+          ],
+          "answer": "For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q06",
+          "question": "When is an incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2404.756,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "deployment.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1] [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q07",
+          "question": "How long are backups retained?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3038.931,
+          "filenames": [
+            "data-protection.md",
+            "data-protection.md",
+            "developer-onboarding.md",
+            "incident-response.md",
+            "deployment.md"
+          ],
+          "answer": "Backups are retained for thirty days. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q08",
+          "question": "What are the recovery point and recovery time objectives?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3448.325,
+          "filenames": [
+            "data-protection.md",
+            "incident-response.md",
+            "deployment.md",
+            "observability.md",
+            "incident-response.md"
+          ],
+          "answer": "The recovery point objective is six hours and the recovery time objective is two hours. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q09",
+          "question": "What is the deadline for removing active records after a customer deletion request?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3802.579,
+          "filenames": [
+            "data-protection.md",
+            "data-protection.md",
+            "incident-response.md",
+            "observability.md",
+            "incident-response.md"
+          ],
+          "answer": "After a verified customer deletion request, active customer records must be removed within seven days. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q10",
+          "question": "What is the standard API quota and what happens when it is exceeded?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3129.619,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "observability.md",
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q11",
+          "question": "How long does the API store idempotency keys?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3085.478,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "data-protection.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q12",
+          "question": "How frequently must API tokens be rotated?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3632.115,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "observability.md",
+            "incident-response.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q13",
+          "question": "What Python and Node.js versions are used for local development?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2573.635,
+          "filenames": [
+            "api-platform.md",
+            "developer-onboarding.md",
+            "api-platform.md",
+            "incident-response.md",
+            "deployment.md"
+          ],
+          "answer": "For local development, Python 3.12 and Node.js 22 are used. [S2] [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q14",
+          "question": "What does the onboarding buddy do during the first month?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 1443.837,
+          "filenames": [
+            "developer-onboarding.md",
+            "developer-onboarding.md",
+            "deployment.md",
+            "deployment.md",
+            "incident-response.md"
+          ],
+          "answer": "The onboarding buddy schedules two check-ins per week during the first month. [S1] [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q15",
+          "question": "What availability objective and error alert threshold are defined?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4873.477,
+          "filenames": [
+            "observability.md",
+            "observability.md",
+            "deployment.md",
+            "developer-onboarding.md",
+            "data-protection.md"
+          ],
+          "answer": "The service objective for the customer API has a monthly availability objective of 99.9 percent. [S1]\n\nThe error alert threshold for the service is set to exceed five percent for five consecutive minutes. [S1] [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q16",
+          "question": "What should happen after a deployment failure, and when is the incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 11092.14,
+          "filenames": [
+            "incident-response.md",
+            "deployment.md",
+            "incident-response.md",
+            "deployment.md",
+            "data-protection.md"
+          ],
+          "answer": "Deployment-related incidents should link the release ticket and the exact image digest used for recovery. [S1]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S3]\n\nA SEV1 incident means complete production unavailability or confirmed exposure of customer data. [S3]\n\nOnly the incident commander can downgrade an active incident after checking the customer impact. [S3]\n\nA rollback procedure involves pausing the deployment pipeline, selecting the previous healthy image digest, and redeploying that image. [S2]\n\nA blameless postmortem must include contributing factors, detection gaps, and action items with owners and due dates. [S1]\n\nThe first responding engineer acts as incident commander until ownership is explicitly handed over. [S3]\n\nFor a SEV1 incident, publish a status update every fifteen minutes until recovery. [S3]\n\nThe incident scribe maintains a timeline of decisions in the incident ticket. [S3]\n\nA SEV2 incident means a major feature is unavailable for a subset of customers. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q17",
+          "question": "What is the capital of Argentina?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 2201.674,
+          "filenames": [
+            "api-platform.md",
+            "incident-response.md",
+            "deployment.md",
+            "data-protection.md",
+            "deployment.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q18",
+          "question": "Who won the Wimbledon tennis championship?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 522.581,
+          "filenames": [
+            "incident-response.md",
+            "api-platform.md",
+            "incident-response.md",
+            "observability.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q19",
+          "question": "Explain the chemical formula of chlorophyll.",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 2480.161,
+          "filenames": [
+            "developer-onboarding.md",
+            "api-platform.md",
+            "observability.md",
+            "deployment.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q20",
+          "question": "Which planets have rings?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 483.478,
+          "filenames": [
+            "api-platform.md",
+            "deployment.md",
+            "developer-onboarding.md",
+            "api-platform.md",
+            "incident-response.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q21",
+          "question": "What is the exact production database password?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2916.87,
+          "filenames": [
+            "data-protection.md",
+            "data-protection.md",
+            "developer-onboarding.md",
+            "api-platform.md",
+            "deployment.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q22",
+          "question": "What is the name and personal phone number of the engineering manager?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 3395.611,
+          "filenames": [
+            "incident-response.md",
+            "developer-onboarding.md",
+            "developer-onboarding.md",
+            "deployment.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q23",
+          "question": "What was the actual customer API availability last month?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 1436.104,
+          "filenames": [
+            "observability.md",
+            "api-platform.md",
+            "api-platform.md",
+            "data-protection.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q24",
+          "question": "What is the monetary price of the standard API plan?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2029.736,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "deployment.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1332 @@
+{
+  "created_at": "2026-11-17T18:55:33.179050+00:00",
+  "provider": "demo",
+  "embedding_model": "hash-v1-768",
+  "chat_model": "extractive-preview",
+  "index_id": "f971016eb4a01b79",
+  "python": "3.12.14",
+  "top_k": 5,
+  "generation_enabled": true,
+  "dataset_size": 24,
+  "documents": 6,
+  "chunk_words": 220,
+  "chunk_overlap": 40,
+  "min_similarity": 0.35,
+  "note": "Synthetic development fixture, not a held-out benchmark. Demo vectors are lexical hashes. Citation validity does not measure factual accuracy.",
+  "strategies": {
+    "bm25": {
+      "metrics": {
+        "evidence_recall_at_5": 1.0,
+        "mrr_at_5": 0.96875,
+        "retrieval_abstention_specificity": 0.375,
+        "retrieval_answerable_coverage": 1.0,
+        "latency_p50_ms": 2.9320000000000004,
+        "latency_p95_ms": 6.7729499999999945,
+        "answer_abstention_specificity": 0.375,
+        "answerable_coverage": 1.0,
+        "citation_validity_among_answers": 1.0
+      },
+      "cases": [
+        {
+          "id": "q01",
+          "question": "What is the procedure for a production rollback?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 21.651,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "incident-response.md",
+            "data-protection.md",
+            "api-platform.md"
+          ],
+          "answer": "## Rollback procedure To roll back production, pause the deployment pipeline, select the previous healthy image digest, and redeploy that image. [S1]\n\n## Backups Production database backups run every six hours. [S2]\n\n## Severity and ownership A SEV1 incident means complete production unavailability or confirmed exposure of customer data. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q02",
+          "question": "How much traffic goes to the deployment canary and for how long?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4.136,
+          "filenames": [
+            "deployment.md"
+          ],
+          "answer": "The deployment pipeline first sends five percent of traffic to the canary for ten minutes. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q03",
+          "question": "When can routine production deployments happen?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.089,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "deployment.md",
+            "data-protection.md",
+            "incident-response.md"
+          ],
+          "answer": "## Release process Production deployments happen on weekdays between 09:00 and 16:00 UTC. [S1]\n\n## Access review Production database access is limited to named accounts with multi-factor authentication. [S2]\n\n## Freeze periods No routine releases are allowed during the monthly billing run. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q04",
+          "question": "What is the on-call escalation process?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.942,
+          "filenames": [
+            "observability.md",
+            "incident-response.md",
+            "deployment.md",
+            "deployment.md",
+            "observability.md"
+          ],
+          "answer": "The primary on-call engineer follows the escalation timings in the incident response guide. [S1]\n\n## On-call escalation The primary on-call engineer must acknowledge a production page within five minutes. [S2]\n\n## Release process Production deployments happen on weekdays between 09:00 and 16:00 UTC. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q05",
+          "question": "How frequently should SEV1 status updates be published?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.529,
+          "filenames": [
+            "incident-response.md"
+          ],
+          "answer": "## Communication For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q06",
+          "question": "When is an incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.757,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "deployment.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 [S2]\n\non-call engineer and attach the failed release's logs to the incident ticket. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q07",
+          "question": "How long are backups retained?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.425,
+          "filenames": [
+            "data-protection.md"
+          ],
+          "answer": "Backups are encrypted and retained for thirty days. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q08",
+          "question": "What are the recovery point and recovery time objectives?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.922,
+          "filenames": [
+            "data-protection.md",
+            "observability.md",
+            "incident-response.md",
+            "incident-response.md",
+            "deployment.md"
+          ],
+          "answer": "The recovery point objective is six hours and the recovery time objective is two hours. [S1]\n\n## Service objectives The customer API has a monthly availability objective of 99.9 percent. [S2]\n\n## Communication For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q09",
+          "question": "What is the deadline for removing active records after a customer deletion request?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.957,
+          "filenames": [
+            "data-protection.md",
+            "incident-response.md",
+            "observability.md",
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "## Customer deletion After a verified customer deletion request, active customer records must be removed within seven days. [S1]\n\nOnly the incident commander can downgrade an active incident after checking the customer impact. [S2]\n\nand duration, without storing the request body. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q10",
+          "question": "What is the standard API quota and what happens when it is exceeded?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 7.164,
+          "filenames": [
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "## Rate limits and retries The standard API quota is 120 requests per minute per project. [S1]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q11",
+          "question": "How long does the API store idempotency keys?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4.065,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "# Northstar Engineering \u2014 API Platform Guide This is fictional sample documentation for a software portfolio demonstration. [S1]\n\nKeys must be unique within a project. [S2]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q12",
+          "question": "How frequently must API tokens be rotated?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4.557,
+          "filenames": [
+            "api-platform.md",
+            "incident-response.md",
+            "api-platform.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "API tokens must be stored in the secret manager and rotated every ninety days. [S1]\n\nDo not include customer records, access tokens, or private debugging output in status updates. [S2]\n\nBreaking API changes require a new major version. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q13",
+          "question": "What Python and Node.js versions are used for local development?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.585,
+          "filenames": [
+            "developer-onboarding.md"
+          ],
+          "answer": "## Development environment Use Python 3.12 and Node.js 22 for the sample product. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q14",
+          "question": "What does the onboarding buddy do during the first month?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.428,
+          "filenames": [
+            "developer-onboarding.md",
+            "developer-onboarding.md",
+            "deployment.md"
+          ],
+          "answer": "The buddy schedules two check-ins per week during the first month. [S1]\n\n## Learning and support Each new engineer has an onboarding buddy for the first thirty days. [S2]\n\nThe deployment pipeline first sends five percent of traffic to the canary for ten minutes. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q15",
+          "question": "What availability objective and error alert threshold are defined?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4.297,
+          "filenames": [
+            "observability.md",
+            "observability.md"
+          ],
+          "answer": "## Service objectives The customer API has a monthly availability objective of 99.9 percent. [S1]\n\n## Alert quality Page the on-call engineer when the error rate exceeds five percent for five consecutive minutes. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q16",
+          "question": "What should happen after a deployment failure, and when is the incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.88,
+          "filenames": [
+            "incident-response.md",
+            "deployment.md",
+            "incident-response.md",
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1]\n\n# Northstar Engineering \u2014 Deployment Runbook This is fictional sample documentation for a software portfolio demonstration. [S2]\n\nOnly the incident commander can downgrade an active incident after checking the customer impact. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q17",
+          "question": "What is the capital of Argentina?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 1.881,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q18",
+          "question": "Who won the Wimbledon tennis championship?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 2.204,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q19",
+          "question": "Explain the chemical formula of chlorophyll.",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 2.52,
+          "filenames": [
+            "developer-onboarding.md"
+          ],
+          "answer": "The author should be ready to explain any generated code and the tests that verify its behavior. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q20",
+          "question": "Which planets have rings?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 1.954,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q21",
+          "question": "What is the exact production database password?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2.401,
+          "filenames": [
+            "developer-onboarding.md",
+            "incident-response.md",
+            "data-protection.md",
+            "data-protection.md",
+            "deployment.md"
+          ],
+          "answer": "Never copy production data into a laptop database. [S1]\n\nDeployment-related incidents should link the release ticket and the exact image digest used for recovery. [S2]\n\n## Backups Production database backups run every six hours. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q22",
+          "question": "What is the name and personal phone number of the engineering manager?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 3.067,
+          "filenames": [
+            "developer-onboarding.md",
+            "incident-response.md",
+            "api-platform.md"
+          ],
+          "answer": "# Northstar Engineering \u2014 Developer Onboarding This is fictional sample documentation for a software portfolio demonstration. [S1]\n\nIf no engineer acknowledges within ten minutes of the first page, escalate to the engineering manager. [S2]\n\n# Northstar Engineering \u2014 API Platform Guide This is fictional sample documentation for a software portfolio demonstration. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q23",
+          "question": "What was the actual customer API availability last month?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2.741,
+          "filenames": [
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "Logs must not contain passwords, API keys, payment card data, or raw customer document content. [S1]\n\n## Service objectives The customer API has a monthly availability objective of 99.9 percent. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q24",
+          "question": "What is the monetary price of the standard API plan?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2.861,
+          "filenames": [
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "## Rate limits and retries The standard API quota is 120 requests per minute per project. [S1]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        }
+      ]
+    },
+    "dense": {
+      "metrics": {
+        "evidence_recall_at_5": 1.0,
+        "mrr_at_5": 0.9375,
+        "retrieval_abstention_specificity": 0.375,
+        "retrieval_answerable_coverage": 1.0,
+        "latency_p50_ms": 3.216,
+        "latency_p95_ms": 3.46965,
+        "answer_abstention_specificity": 0.375,
+        "answerable_coverage": 1.0,
+        "citation_validity_among_answers": 1.0
+      },
+      "cases": [
+        {
+          "id": "q01",
+          "question": "What is the procedure for a production rollback?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 4.721,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "data-protection.md",
+            "incident-response.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "## Rollback procedure To roll back production, pause the deployment pipeline, select the previous healthy image digest, and redeploy that image. [S1]\n\n## Backups Production database backups run every six hours. [S2]\n\n## Access review Production database access is limited to named accounts with multi-factor authentication. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q02",
+          "question": "How much traffic goes to the deployment canary and for how long?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.389,
+          "filenames": [
+            "deployment.md"
+          ],
+          "answer": "The deployment pipeline first sends five percent of traffic to the canary for ten minutes. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q03",
+          "question": "When can routine production deployments happen?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.378,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "data-protection.md",
+            "deployment.md",
+            "incident-response.md"
+          ],
+          "answer": "## Release process Production deployments happen on weekdays between 09:00 and 16:00 UTC. [S1]\n\n## Backups Production database backups run every six hours. [S2]\n\n## Access review Production database access is limited to named accounts with multi-factor authentication. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q04",
+          "question": "What is the on-call escalation process?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.323,
+          "filenames": [
+            "observability.md",
+            "incident-response.md",
+            "deployment.md",
+            "deployment.md",
+            "observability.md"
+          ],
+          "answer": "The primary on-call engineer follows the escalation timings in the incident response guide. [S1]\n\n## On-call escalation The primary on-call engineer must acknowledge a production page within five minutes. [S2]\n\n## Release process Production deployments happen on weekdays between 09:00 and 16:00 UTC. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q05",
+          "question": "How frequently should SEV1 status updates be published?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.951,
+          "filenames": [
+            "incident-response.md"
+          ],
+          "answer": "## Communication For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q06",
+          "question": "When is an incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.003,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "observability.md",
+            "deployment.md",
+            "data-protection.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 [S2]\n\nReview noisy alerts after every incident and disable duplicate alerts once an equivalent signal has been verified. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q07",
+          "question": "How long are backups retained?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.84,
+          "filenames": [
+            "data-protection.md"
+          ],
+          "answer": "Backups are encrypted and retained for thirty days. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q08",
+          "question": "What are the recovery point and recovery time objectives?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.244,
+          "filenames": [
+            "incident-response.md",
+            "data-protection.md",
+            "incident-response.md",
+            "deployment.md",
+            "observability.md"
+          ],
+          "answer": "## Recovery and review An incident is resolved after the customer-facing service has been healthy for thirty consecutive minutes. [S1]\n\nThe recovery point objective is six hours and the recovery time objective is two hours. [S2]\n\n## Communication For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q09",
+          "question": "What is the deadline for removing active records after a customer deletion request?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.471,
+          "filenames": [
+            "data-protection.md",
+            "observability.md",
+            "observability.md",
+            "incident-response.md",
+            "data-protection.md"
+          ],
+          "answer": "## Customer deletion After a verified customer deletion request, active customer records must be removed within seven days. [S1]\n\n## Service objectives The customer API has a monthly availability objective of 99.9 percent. [S2]\n\nand duration, without storing the request body. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q10",
+          "question": "What is the standard API quota and what happens when it is exceeded?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.956,
+          "filenames": [
+            "api-platform.md"
+          ],
+          "answer": "## Rate limits and retries The standard API quota is 120 requests per minute per project. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q11",
+          "question": "How long does the API store idempotency keys?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.239,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "# Northstar Engineering \u2014 API Platform Guide This is fictional sample documentation for a software portfolio demonstration. [S1]\n\nKeys must be unique within a project. [S2]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q12",
+          "question": "How frequently must API tokens be rotated?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.293,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "incident-response.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "API tokens must be stored in the secret manager and rotated every ninety days. [S1]\n\nBreaking API changes require a new major version. [S2]\n\nDo not include customer records, access tokens, or private debugging output in status updates. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q13",
+          "question": "What Python and Node.js versions are used for local development?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.033,
+          "filenames": [
+            "developer-onboarding.md"
+          ],
+          "answer": "## Development environment Use Python 3.12 and Node.js 22 for the sample product. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q14",
+          "question": "What does the onboarding buddy do during the first month?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.036,
+          "filenames": [
+            "developer-onboarding.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "The buddy schedules two check-ins per week during the first month. [S1]\n\n## Learning and support Each new engineer has an onboarding buddy for the first thirty days. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q15",
+          "question": "What availability objective and error alert threshold are defined?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.314,
+          "filenames": [
+            "observability.md",
+            "observability.md"
+          ],
+          "answer": "## Service objectives The customer API has a monthly availability objective of 99.9 percent. [S1]\n\n## Alert quality Page the on-call engineer when the error rate exceeds five percent for five consecutive minutes. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q16",
+          "question": "What should happen after a deployment failure, and when is the incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.193,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "data-protection.md",
+            "deployment.md",
+            "observability.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1]\n\nOnly the incident commander can downgrade an active incident after checking the customer impact. [S2]\n\nTemporary emergency access expires after four hours unless the incident commander renews it. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q17",
+          "question": "What is the capital of Argentina?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 2.588,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q18",
+          "question": "Who won the Wimbledon tennis championship?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 2.591,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q19",
+          "question": "Explain the chemical formula of chlorophyll.",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 2.881,
+          "filenames": [
+            "developer-onboarding.md"
+          ],
+          "answer": "The author should be ready to explain any generated code and the tests that verify its behavior. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q20",
+          "question": "Which planets have rings?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 2.585,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q21",
+          "question": "What is the exact production database password?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 3.287,
+          "filenames": [
+            "data-protection.md",
+            "data-protection.md",
+            "deployment.md",
+            "incident-response.md",
+            "developer-onboarding.md"
+          ],
+          "answer": "## Backups Production database backups run every six hours. [S1]\n\n## Access review Production database access is limited to named accounts with multi-factor authentication. [S2]\n\n## Release process Production deployments happen on weekdays between 09:00 and 16:00 UTC. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q22",
+          "question": "What is the name and personal phone number of the engineering manager?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 3.432,
+          "filenames": [
+            "developer-onboarding.md",
+            "incident-response.md",
+            "api-platform.md"
+          ],
+          "answer": "# Northstar Engineering \u2014 Developer Onboarding This is fictional sample documentation for a software portfolio demonstration. [S1]\n\nIf no engineer acknowledges within ten minutes of the first page, escalate to the engineering manager. [S2]\n\n# Northstar Engineering \u2014 API Platform Guide This is fictional sample documentation for a software portfolio demonstration. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q23",
+          "question": "What was the actual customer API availability last month?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 3.462,
+          "filenames": [
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "## Service objectives The customer API has a monthly availability objective of 99.9 percent. [S1]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q24",
+          "question": "What is the monetary price of the standard API plan?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2.955,
+          "filenames": [
+            "api-platform.md"
+          ],
+          "answer": "## Rate limits and retries The standard API quota is 120 requests per minute per project. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        }
+      ]
+    },
+    "hybrid": {
+      "metrics": {
+        "evidence_recall_at_5": 1.0,
+        "mrr_at_5": 0.96875,
+        "retrieval_abstention_specificity": 0.375,
+        "retrieval_answerable_coverage": 1.0,
+        "latency_p50_ms": 2.909,
+        "latency_p95_ms": 3.3442,
+        "answer_abstention_specificity": 0.375,
+        "answerable_coverage": 1.0,
+        "citation_validity_among_answers": 1.0
+      },
+      "cases": [
+        {
+          "id": "q01",
+          "question": "What is the procedure for a production rollback?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.346,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "data-protection.md",
+            "incident-response.md",
+            "api-platform.md"
+          ],
+          "answer": "## Rollback procedure To roll back production, pause the deployment pipeline, select the previous healthy image digest, and redeploy that image. [S1]\n\n## Backups Production database backups run every six hours. [S2]\n\n## Access review Production database access is limited to named accounts with multi-factor authentication. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q02",
+          "question": "How much traffic goes to the deployment canary and for how long?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.062,
+          "filenames": [
+            "deployment.md"
+          ],
+          "answer": "The deployment pipeline first sends five percent of traffic to the canary for ten minutes. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q03",
+          "question": "When can routine production deployments happen?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.229,
+          "filenames": [
+            "deployment.md",
+            "data-protection.md",
+            "data-protection.md",
+            "deployment.md",
+            "incident-response.md"
+          ],
+          "answer": "## Release process Production deployments happen on weekdays between 09:00 and 16:00 UTC. [S1]\n\n## Access review Production database access is limited to named accounts with multi-factor authentication. [S2]\n\n## Backups Production database backups run every six hours. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q04",
+          "question": "What is the on-call escalation process?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.136,
+          "filenames": [
+            "observability.md",
+            "incident-response.md",
+            "deployment.md",
+            "deployment.md",
+            "observability.md"
+          ],
+          "answer": "The primary on-call engineer follows the escalation timings in the incident response guide. [S1]\n\n## On-call escalation The primary on-call engineer must acknowledge a production page within five minutes. [S2]\n\n## Release process Production deployments happen on weekdays between 09:00 and 16:00 UTC. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q05",
+          "question": "How frequently should SEV1 status updates be published?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.906,
+          "filenames": [
+            "incident-response.md"
+          ],
+          "answer": "## Communication For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q06",
+          "question": "When is an incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.657,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "observability.md",
+            "deployment.md",
+            "data-protection.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1]\n\nA blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 [S2]\n\nReview noisy alerts after every incident and disable duplicate alerts once an equivalent signal has been verified. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q07",
+          "question": "How long are backups retained?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.062,
+          "filenames": [
+            "data-protection.md"
+          ],
+          "answer": "Backups are encrypted and retained for thirty days. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q08",
+          "question": "What are the recovery point and recovery time objectives?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.566,
+          "filenames": [
+            "data-protection.md",
+            "incident-response.md",
+            "incident-response.md",
+            "observability.md",
+            "deployment.md"
+          ],
+          "answer": "The recovery point objective is six hours and the recovery time objective is two hours. [S1]\n\n## Recovery and review An incident is resolved after the customer-facing service has been healthy for thirty consecutive minutes. [S2]\n\n## Communication For a SEV1 incident, publish a status update every fifteen minutes until recovery. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q09",
+          "question": "What is the deadline for removing active records after a customer deletion request?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.529,
+          "filenames": [
+            "data-protection.md",
+            "incident-response.md",
+            "observability.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "## Customer deletion After a verified customer deletion request, active customer records must be removed within seven days. [S1]\n\nOnly the incident commander can downgrade an active incident after checking the customer impact. [S2]\n\nand duration, without storing the request body. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q10",
+          "question": "What is the standard API quota and what happens when it is exceeded?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.336,
+          "filenames": [
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "## Rate limits and retries The standard API quota is 120 requests per minute per project. [S1]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q11",
+          "question": "How long does the API store idempotency keys?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.458,
+          "filenames": [
+            "api-platform.md",
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "# Northstar Engineering \u2014 API Platform Guide This is fictional sample documentation for a software portfolio demonstration. [S1]\n\nKeys must be unique within a project. [S2]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q12",
+          "question": "How frequently must API tokens be rotated?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.095,
+          "filenames": [
+            "api-platform.md",
+            "incident-response.md",
+            "api-platform.md",
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "API tokens must be stored in the secret manager and rotated every ninety days. [S1]\n\nDo not include customer records, access tokens, or private debugging output in status updates. [S2]\n\nBreaking API changes require a new major version. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q13",
+          "question": "What Python and Node.js versions are used for local development?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.773,
+          "filenames": [
+            "developer-onboarding.md"
+          ],
+          "answer": "## Development environment Use Python 3.12 and Node.js 22 for the sample product. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q14",
+          "question": "What does the onboarding buddy do during the first month?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.912,
+          "filenames": [
+            "developer-onboarding.md",
+            "developer-onboarding.md",
+            "deployment.md"
+          ],
+          "answer": "The buddy schedules two check-ins per week during the first month. [S1]\n\n## Learning and support Each new engineer has an onboarding buddy for the first thirty days. [S2]\n\nThe deployment pipeline first sends five percent of traffic to the canary for ten minutes. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q15",
+          "question": "What availability objective and error alert threshold are defined?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 3.334,
+          "filenames": [
+            "observability.md",
+            "observability.md"
+          ],
+          "answer": "## Service objectives The customer API has a monthly availability objective of 99.9 percent. [S1]\n\n## Alert quality Page the on-call engineer when the error rate exceeds five percent for five consecutive minutes. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q16",
+          "question": "What should happen after a deployment failure, and when is the incident postmortem due?",
+          "answerable": true,
+          "evidence_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieval_abstained": false,
+          "negative_type": null,
+          "latency_ms": 2.526,
+          "filenames": [
+            "incident-response.md",
+            "incident-response.md",
+            "deployment.md",
+            "data-protection.md",
+            "observability.md"
+          ],
+          "answer": "A blameless postmortem is due within three business days of resolution for every SEV1 and SEV2 incident. [S1]\n\nOnly the incident commander can downgrade an active incident after checking the customer impact. [S2]\n\n# Northstar Engineering \u2014 Deployment Runbook This is fictional sample documentation for a software portfolio demonstration. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q17",
+          "question": "What is the capital of Argentina?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 2.28,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q18",
+          "question": "Who won the Wimbledon tennis championship?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 3.126,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q19",
+          "question": "Explain the chemical formula of chlorophyll.",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "off_topic",
+          "latency_ms": 3.61,
+          "filenames": [
+            "developer-onboarding.md"
+          ],
+          "answer": "The author should be ready to explain any generated code and the tests that verify its behavior. [S1]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q20",
+          "question": "Which planets have rings?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": true,
+          "negative_type": "off_topic",
+          "latency_ms": 2.284,
+          "filenames": [],
+          "answer": "I couldn't find enough evidence in the selected documents to answer that.",
+          "answer_abstained": true,
+          "citation_valid": false
+        },
+        {
+          "id": "q21",
+          "question": "What is the exact production database password?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 3.283,
+          "filenames": [
+            "data-protection.md",
+            "developer-onboarding.md",
+            "data-protection.md",
+            "deployment.md",
+            "incident-response.md"
+          ],
+          "answer": "## Backups Production database backups run every six hours. [S1]\n\nNever copy production data into a laptop database. [S2]\n\n## Access review Production database access is limited to named accounts with multi-factor authentication. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q22",
+          "question": "What is the name and personal phone number of the engineering manager?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2.871,
+          "filenames": [
+            "developer-onboarding.md",
+            "incident-response.md",
+            "api-platform.md"
+          ],
+          "answer": "# Northstar Engineering \u2014 Developer Onboarding This is fictional sample documentation for a software portfolio demonstration. [S1]\n\nIf no engineer acknowledges within ten minutes of the first page, escalate to the engineering manager. [S2]\n\n# Northstar Engineering \u2014 API Platform Guide This is fictional sample documentation for a software portfolio demonstration. [S3]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q23",
+          "question": "What was the actual customer API availability last month?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 2.927,
+          "filenames": [
+            "observability.md",
+            "data-protection.md"
+          ],
+          "answer": "## Service objectives The customer API has a monthly availability objective of 99.9 percent. [S1]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        },
+        {
+          "id": "q24",
+          "question": "What is the monetary price of the standard API plan?",
+          "answerable": false,
+          "evidence_recall": null,
+          "reciprocal_rank": 0,
+          "retrieval_abstained": false,
+          "negative_type": "near_topic",
+          "latency_ms": 3.147,
+          "filenames": [
+            "api-platform.md",
+            "data-protection.md"
+          ],
+          "answer": "## Rate limits and retries The standard API quota is 120 requests per minute per project. [S1]\n\nLogs must not contain passwords, API keys, payment card data, or raw customer document content. [S2]",
+          "answer_abstained": false,
+          "citation_valid": true
+        }
+      ]
+    }
+  }
+}

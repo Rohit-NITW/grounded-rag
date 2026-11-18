@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+data/
+.coverage
+htmlcov/
+reports/*.json
+!reports/demo-benchmark.json
+.DS_Store
+
+*.before-citation-fix

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Grounded — ask your documents, inspect the evidence.">
+  <title>Grounded · Document research</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%233b4c37'/%3E%3Ctext x='9' y='29' fill='white' font-size='28'%3Eg%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brandmark">g.</span>grounded<span class="brand-divider"></span><span class="brand-sub">Research workspace</span></a>
+    <div class="header-actions"><span id="provider-badge" class="badge">Connecting</span><a href="/docs" target="_blank" rel="noreferrer">API docs ↗</a></div>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar">
+      <div class="section-heading"><h2>Knowledge base</h2><span id="doc-count" class="count">0</span></div>
+      <p class="muted small">Your sources. One place to ask.</p>
+      <label class="upload-zone" id="drop-zone" tabindex="0" role="button" aria-label="Upload documents">
+        <span class="upload-icon">↥</span><strong>Add documents</strong><span>Drop files or browse</span><small id="upload-hint">PDF, TXT, MD · 10 MB per file</small>
+        <input id="file-input" type="file" accept=".pdf,.txt,.md" multiple hidden>
+      </label>
+      <p id="upload-status" class="small" role="status"></p>
+      <div class="source-heading"><span>SOURCES</span><button class="text-button" id="clear-filter">Use all</button></div>
+      <div id="document-list" class="document-list"></div>
+      <button id="toggle-settings" class="secondary mobile-settings" aria-expanded="false">Search settings</button>
+      <div class="sidebar-bottom">
+        <label class="field-label" for="strategy">Retrieval method</label>
+        <select id="strategy"><option value="hybrid">Hybrid · keyword + vector</option><option value="bm25">BM25 · keyword only</option><option value="dense">Vector only</option></select>
+        <label class="field-label" for="top-k">Passages to retrieve <span id="top-k-value">5</span></label>
+        <input id="top-k" type="range" min="1" max="10" value="5">
+        <details class="access"><summary>Access token</summary><label class="sr-only" for="access-token">API access token</label><input id="access-token" type="password" placeholder="Only if configured" autocomplete="off"><button id="connect" class="secondary">Connect</button><p class="small muted">Kept in this tab's memory only.</p></details>
+        <div class="index-status"><span class="status-dot"></span><span id="index-status">Loading index</span></div>
+      </div>
+    </aside>
+    <main>
+      <div class="main-heading"><span class="eyebrow">DOCUMENT INTELLIGENCE</span><span class="workspace-label">Personal workspace</span></div>
+      <section class="intro"><div class="overline">A little less searching.</div><h1>Answers with<br><em>something behind them.</em></h1><p>Ask a question across your documents.<br>Follow every answer back to its source.</p></section>
+      <div id="mode-note" class="mode-note" hidden></div>
+      <section class="question-area" aria-label="Ask your documents">
+        <form id="question-form">
+          <label for="question" class="sr-only">Your question</label>
+          <textarea id="question" rows="3" maxlength="2000" placeholder="What would you like to know?" required></textarea>
+          <div class="composer-bottom"><span id="scope-label">Searching all documents</span><button id="ask-button" type="submit">Ask Grounded <span>↗</span></button></div>
+        </form>
+        <div class="suggestions"><span>TRY ASKING</span><button data-question="What is the procedure for a production rollback?">Production rollback ↗</button><button data-question="How long are backups retained?">Backup retention ↗</button><button data-question="What is the on-call escalation process?">On-call escalation ↗</button></div>
+      </section>
+      <div id="error" class="error" role="alert" hidden></div>
+      <section id="answer-panel" class="answer-panel" aria-live="polite" hidden>
+        <div class="answer-top"><span class="eyebrow" id="answer-label">ANSWER</span><button id="export-answer" class="text-button">Export Markdown ↓</button></div>
+        <h2 id="answered-question"></h2><div id="answer-content"></div><div id="answer-metrics" class="answer-metrics"></div>
+      </section>
+      <section id="empty-state" class="how-it-works"><div><span>01</span><h3>Bring your context</h3><p>Upload handbooks, research, or project documentation.</p></div><div><span>02</span><h3>Ask precisely</h3><p>Search everything or select the sources that matter.</p></div><div><span>03</span><h3>Check the evidence</h3><p>Inspect passages and retrieval scores alongside the answer.</p></div></section>
+      <footer>Built for traceable answers. Always review the supporting evidence.</footer>
+    </main>
+    <aside class="evidence-panel"><div class="section-heading"><h2>Evidence</h2><span id="evidence-count" class="count">0</span></div><p class="muted small">The passages behind your answer.</p><div id="evidence-list"><div class="evidence-empty"><span>≋</span><h3>Start with a question</h3><p>Retrieved passages, source references, and search scores appear here.</p></div></div><div class="evidence-legend"><span class="status-dot"></span> Source IDs are checked before display.<br><span class="muted">A valid reference is not a factual guarantee.</span></div></aside>
+  </div>
+</body>
+</html>

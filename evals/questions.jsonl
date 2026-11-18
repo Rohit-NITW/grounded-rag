@@ -1,0 +1,24 @@
+{"id":"q01","question":"What is the procedure for a production rollback?","evidence":[{"filename":"deployment.md","contains":"select the previous healthy image digest"}]}
+{"id":"q02","question":"How much traffic goes to the deployment canary and for how long?","evidence":[{"filename":"deployment.md","contains":"five percent of traffic to the canary for ten minutes"}]}
+{"id":"q03","question":"When can routine production deployments happen?","evidence":[{"filename":"deployment.md","contains":"weekdays between 09:00 and 16:00 UTC"}]}
+{"id":"q04","question":"What is the on-call escalation process?","evidence":[{"filename":"incident-response.md","contains":"escalate to the engineering manager"}]}
+{"id":"q05","question":"How frequently should SEV1 status updates be published?","evidence":[{"filename":"incident-response.md","contains":"every fifteen minutes"}]}
+{"id":"q06","question":"When is an incident postmortem due?","evidence":[{"filename":"incident-response.md","contains":"three business days"}]}
+{"id":"q07","question":"How long are backups retained?","evidence":[{"filename":"data-protection.md","contains":"retained for thirty days"}]}
+{"id":"q08","question":"What are the recovery point and recovery time objectives?","evidence":[{"filename":"data-protection.md","contains":"recovery point objective is six hours"}]}
+{"id":"q09","question":"What is the deadline for removing active records after a customer deletion request?","evidence":[{"filename":"data-protection.md","contains":"within seven days"}]}
+{"id":"q10","question":"What is the standard API quota and what happens when it is exceeded?","evidence":[{"filename":"api-platform.md","contains":"120 requests per minute"}]}
+{"id":"q11","question":"How long does the API store idempotency keys?","evidence":[{"filename":"api-platform.md","contains":"twenty-four hours"}]}
+{"id":"q12","question":"How frequently must API tokens be rotated?","evidence":[{"filename":"api-platform.md","contains":"rotated every ninety days"}]}
+{"id":"q13","question":"What Python and Node.js versions are used for local development?","evidence":[{"filename":"developer-onboarding.md","contains":"Python 3.12 and Node.js 22"}]}
+{"id":"q14","question":"What does the onboarding buddy do during the first month?","evidence":[{"filename":"developer-onboarding.md","contains":"two check-ins per week"}]}
+{"id":"q15","question":"What availability objective and error alert threshold are defined?","evidence":[{"filename":"observability.md","contains":"99.9 percent"},{"filename":"observability.md","contains":"five percent for five consecutive minutes"}]}
+{"id":"q16","question":"What should happen after a deployment failure, and when is the incident postmortem due?","evidence":[{"filename":"deployment.md","contains":"select the previous healthy image digest"},{"filename":"incident-response.md","contains":"three business days"}]}
+{"id":"q17","question":"What is the capital of Argentina?","evidence":[],"negative_type":"off_topic"}
+{"id":"q18","question":"Who won the Wimbledon tennis championship?","evidence":[],"negative_type":"off_topic"}
+{"id":"q19","question":"Explain the chemical formula of chlorophyll.","evidence":[],"negative_type":"off_topic"}
+{"id":"q20","question":"Which planets have rings?","evidence":[],"negative_type":"off_topic"}
+{"id":"q21","question":"What is the exact production database password?","evidence":[],"negative_type":"near_topic"}
+{"id":"q22","question":"What is the name and personal phone number of the engineering manager?","evidence":[],"negative_type":"near_topic"}
+{"id":"q23","question":"What was the actual customer API availability last month?","evidence":[],"negative_type":"near_topic"}
+{"id":"q24","question":"What is the monetary price of the standard API plan?","evidence":[],"negative_type":"near_topic"}

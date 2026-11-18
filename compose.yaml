@@ -1,0 +1,36 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      RAG_PROVIDER: ${RAG_PROVIDER:-demo}
+      RAG_CHAT_MODEL: ${RAG_CHAT_MODEL:-qwen2.5:3b}
+      RAG_EMBED_MODEL: ${RAG_EMBED_MODEL:-nomic-embed-text}
+      RAG_OLLAMA_URL: http://ollama:11434
+      RAG_DATA_DIR: /app/data
+      RAG_API_TOKEN: ${RAG_API_TOKEN:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      RAG_CHUNK_WORDS: ${RAG_CHUNK_WORDS:-220}
+      RAG_CHUNK_OVERLAP: ${RAG_CHUNK_OVERLAP:-40}
+      RAG_TOP_K: ${RAG_TOP_K:-5}
+      RAG_MIN_SIMILARITY: ${RAG_MIN_SIMILARITY:-0.35}
+    volumes:
+      - rag-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+  ollama:
+    image: ollama/ollama:latest
+    profiles: [local]
+    volumes:
+      - ollama-models:/root/.ollama
+    restart: unless-stopped
+volumes:
+  rag-data:
+  ollama-models:

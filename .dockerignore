@@ -1,0 +1,11 @@
+.env
+.venv
+.git
+__pycache__
+**/__pycache__
+data
+*.egg-info
+reports
+docs
+tests
+scripts
